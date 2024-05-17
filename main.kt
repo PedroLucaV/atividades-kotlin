@@ -29,13 +29,21 @@ fun atividade3(senha: String): Boolean {
     }
 
     var validaSenha = false;
+    var maiuscula = false;
+    var minuscula = false;
+    var numero = false;
 
     for (caracter in senha) {
         when {
-            caracter.isUpperCase() && caracter.isLowerCase() && caracter.isDigit() -> validaSenha = true;
+            caracter.isUpperCase() -> maiuscula = true;
+            caracter.isLowerCase() -> minuscula = true;
+            caracter.isDigit() -> numero = true;
         }
     }
-
+	
+    if (maiuscula == true && minuscula == true && numero == true){
+        validaSenha = true;
+    }
     return validaSenha;
 }
 
