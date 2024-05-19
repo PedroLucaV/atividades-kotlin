@@ -135,8 +135,9 @@ fun atividade12(ano: Int): Boolean {
     return ano % 4 == 0
 }
 
-fun atividade13(altura: Double, peso: Double){
-    //IMC com peso e altura
+fun atividade13(altura: Double, peso: Double): Double {
+    val imc = peso / (altura * altura);
+    return imc;
 }
 
 fun atividade14(frase: String): Int{
@@ -149,5 +150,7 @@ fun atividade15(lista: List<Int>): Int{
 }
 
 fun main () {
-    println(atividade15(listOf(1, 2, 3, 3, 4, 5, 5, 6)))
+    val imc = atividade13(1.75, 84.2);
+    val imcFormatado = "%.2f".format(imc);
+    println(imcFormatado)
 }
